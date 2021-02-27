@@ -17,7 +17,12 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
 			//$text = $event['source']['userId'];
-			$text = $event['message']['text'];
+			$texta = $event['message']['text'];
+			if ($texta == 'order') {
+				$text = 'ok';
+			} else {
+				$text = $event['message']['text'];
+			}
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
